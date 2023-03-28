@@ -15,12 +15,12 @@ app.get('/', async (req, res) => {
   res.render('index', { notes: notes });
 });
 
-mongoose.connect(process.env.SERVER, {
+mongoose.connect('mongodb+srv://Anoshaa:ano123@cluster0.87gi7wk.mongodb.net/?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
 app.use('/', notesRouter);
-app.listen(process.env.PORT || 3000, () => {
+app.listen( process.env.PORT || 3000, () => {
   console.log(`Server Has Started`);
 });
